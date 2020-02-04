@@ -1,0 +1,34 @@
+ID: ZUI5
+_schema-version: '2.1'
+description: Ui5
+version: 0.0.1
+
+modules:
+ - name: Zui5_plain
+   type: html5
+   path: Zui5_plain
+   parameters:
+      disk-quota: 256M
+      memory: 256M
+   build-parameters:
+      builder: grunt
+   requires:
+    - name: uaa_ZUI5
+    - name: dest_ZUI5
+
+ 
+
+resources:
+ - name: uaa_ZUI5
+   parameters:
+      path: ./xs-security.json
+      service-plan: application
+      service: xsuaa
+   type: org.cloudfoundry.existing-service
+
+ - name: dest_ZUI5
+   parameters:
+      service-plan: lite
+      service: destination
+   type: org.cloudfoundry.existing-service
+

@@ -1,0 +1,14 @@
+{
+  "welcomeFile": "/Zui5_plain/index.html",
+  "authenticationMethod": "route",
+  "logout": {
+    "logoutEndpoint": "/do/logout"
+  },
+  "routes": [
+    {
+      "source": "^/Zui5_plain/(.*)$",
+      "target": "$1",
+      "localDir": "webapp"
+    }
+  ]
+}
